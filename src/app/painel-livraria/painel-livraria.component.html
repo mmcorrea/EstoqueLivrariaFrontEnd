@@ -1,0 +1,28 @@
+<div *ngIf="!cadastro">
+<div class="pesquisa">
+  <mat-form-field>
+    <input matInput placeholder="pesquisar">
+  </mat-form-field>
+</div>
+
+<div>
+<button mat-raised-button color="primary" (click)="openCadastro()">Novo Livro</button>
+</div>
+
+<mat-card class="painelLivro" *ngFor="let livro of listaLivros">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{livro.dS_Titulo}}</mat-card-title>
+    <mat-card-subtitle>{{livro.dS_Autor}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://image.slidesharecdn.com/chiavenato-gestaodepessoas-160503222757/95/chiavenato-gestao-de-pessoas-1-638.jpg?cb=1462314572" alt="livro.dS_Titulo">
+  <mat-card-actions>
+    <button mat-button>Editar</button>
+    <button mat-button>Excluir</button>
+  </mat-card-actions>
+</mat-card>
+
+
+</div>
+
+<novo-livro (cancelar)="openCadastro()" *ngIf="cadastro"></novo-livro>

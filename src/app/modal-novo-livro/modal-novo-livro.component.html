@@ -1,0 +1,18 @@
+<form [formGroup]="formcadastro" (ngSubmit)="salvar()" class="container">
+    <mat-form-field>
+        <input type="text" matInput placeholder="Título" formGroupName="DS_Titulo">
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input type="text" matInput placeholder="Autor" formGroupName="DS_Autor">
+    </mat-form-field>
+  
+    <input type="file" placeholder="Imagem" formGroupName="DT_Imagem">
+
+    <br>
+
+    <button mat-button color="warn" (click)="fechar()">Cancelar</button>
+
+    <button mat-button color="primary" (click)="salvar()">Enviar</button>
+
+</form>
